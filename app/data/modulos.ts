@@ -2,7 +2,7 @@
 export const modulos = [
   {
     icon: 'mdi:lightbulb-on-outline',
-    titulo: 'Fundamentos do Empreendedorismo',
+    titulo: 'Empreendedorismo',
     conteudo: 'Conceitos essenciais para transformar ciência em negócio.',
   },
   {
