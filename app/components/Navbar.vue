@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const navLinks = [
-  { name: 'Treinamento', to: '/treinamento' },
-  { name: 'Público-alvo', to: '/publicoAlvo' },
+  { name: 'Treinamento', to: '/#treinamento' },
+  { name: 'Público-alvo', to: '/#publicoAlvo' },
   { name: 'Conteúdo', to: '/#conteudo' },
   { name: 'Metodologia', to: '/#metodologia' },
   { name: 'Resultado', to: '/#resultado' },
   { name: 'Professores', to: '/#professores' },
-  { name: 'Edições anteriores', to: '/anteriores' },
+  { name: 'Edições anteriores', to: '/#anteriores' },
 ]
 </script>
 

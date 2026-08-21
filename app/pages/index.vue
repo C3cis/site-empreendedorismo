@@ -3,6 +3,7 @@
 import { publicoAlvo } from '~/data/publicoAlvo'
 import { modulos } from '~/data/modulos'
 import { resultados } from '~/data/resultados'
+import { professores } from '~/data/professores'
 
 
 </script>
@@ -35,7 +36,7 @@ import { resultados } from '~/data/resultados'
     </section>
 
     <section 
-    id="Treinamento"
+    id="treinamento"
     class="relative bg-white px-3 py-8">
    <div class="grid grid-cols-1  mx-auto max-w-3xl text-center ">
         <h2
@@ -77,7 +78,7 @@ import { resultados } from '~/data/resultados'
 
     <section
    id="conteudo"
-  class="relative mt-10 flex min-h-screen rounded-t-[50%_300px] items-start bg-[url('/fundoSecao3.png')] bg-cover bg-center px-6 pt-28"
+  class="relative mt-10 flex min-h-screen rounded-t-[50%_300px] items-start bg-[url('/fundoSecoes.png')] bg-cover bg-center px-6 pt-28"
     >
     <div class="mx-auto max-w-7xl text-center">
         <h2 class="font-poppins mb-6 text-blue-400 text-xl font-extrabold sm:text-xl md:text-xl">
@@ -101,7 +102,7 @@ import { resultados } from '~/data/resultados'
     </section>
 
     <section
-    id="metologia"
+    id="metodologia"
     class="bg-white px-8 py-8">
     <div class="mx-auto max-w-7xl text-center">
     <h2 class="font-poppins mb-6 text-blue-900 text-xl font-extrabold sm:text-xl md:text-xl">
@@ -166,14 +167,14 @@ import { resultados } from '~/data/resultados'
 
     <section
     id="resultado"
-    class="relative mt-5 flex min-h-screen items-start bg-[url('/fundoSecao3.png')] bg-center px-6 pt-28">
-    <div class="mx-auto max-w-7xl text-center ">
+    class="relative mt-5 flex min-h-screen items-start bg-[url('/fundoSecoes.png')] bg-center px-6 pt-28">
+    <div class="mx-auto max-w-7xl text-center  ">
     <h2 class="font-poppins mb-6 text-blue-500 text-xl font-extrabold sm:text-xl md:text-xl">
           Resultados Esperados
         </h2>
        <p class="font-lato mt-4 text-xs text-gray-300"> Ao final do treinamento, você estará preparado para:</p>
 
-       <div class="mt-10 flex flex-wrap justify-center gap-6 text-orange-500">
+       <div class="mt-10 flex flex-wrap justify-center gap-6 text-orange-500 p-2">
          <CardInfo
            v-for="item in resultados"
            :key="item.titulo"
@@ -183,8 +184,112 @@ import { resultados } from '~/data/resultados'
            :conteudo="item.conteudo"
          />
        </div>
+       <span class="rounded-xl bg-orange-500 pt-3 pr-8 pb-3 pl-6 text-xs font-medium text-white  "
+            >Sua pesquisa pode ser a próxima grande solução.</span>
     </div>
     </section>
-    
+
+    <section
+    id="professores" class="bg-white px-8 py-8">
+      <div class="mx-auto max-w-7xl text-center">
+        <h2
+          class="font-poppins mb-6 text-blue-900 text-xl font-extrabold sm:text-xl md:text-xl">
+          Conheça os Professores
+        </h2>
+      </div>
+      <!-- Fileira de cima: 4 professores -->
+      <div class="mt-20 mx-auto flex max-w-7xl flex-wrap justify-center gap-8">
+        <CardProfessor
+          v-for="prof in professores.slice(0, 4)"
+          :key="prof.nome"
+          :foto="prof.foto"
+          :nome="prof.nome"
+          :cargo="prof.cargo"
+          :linkedin="prof.linkedin"
+        />
+      </div>
+
+      <!-- Fileira de baixo: do 5º em diante -->
+      <div class="mx-auto mt-8 flex max-w-7xl flex-wrap justify-center gap-8">
+        <CardProfessor
+          v-for="prof in professores.slice(4)"
+          :key="prof.nome"
+          :foto="prof.foto"
+          :nome="prof.nome"
+          :cargo="prof.cargo"
+          :linkedin="prof.linkedin"
+        />
+      </div>
+      
+        
+
+    </section>
+
+    <!-- ===== SEÇÃO DE CADASTRO ===== -->
+    <section id="cadastro" 
+    class="relative overflow-hidden bg-white px-8 py-24   ">
+
+      <!-- wrapper do card: 'relative' = o "palco" pro brilho se posicionar -->
+      <div class="relative mx-auto max-w-4xl">
+
+        <!-- CAMADA 1: brilho laranja (maior que o card, atrás dele) -->
+        <div
+        id="CamadaTranslucida"
+          class="pointer-events-none absolute left-2/3 -top-2/4 h-[80%] w-[300%] -translate-x-1/2 translate-y-1/4 bg-orange-400 opacity-50 blur-lg "
+        ></div>
+
+        <!-- CAMADA 2: o card principal ('z-10' = na frente do brilho) -->
+        <div 
+        id="imagemFundo"
+        class="relative z-10 rounded-3xl bg-[url('/fundoSecoes.png')] bg-center px-6 pt-28 p-8 text-center shadow-2xl sm:p-12">
+
+          <!-- 1. Badge -->
+          <span
+            class="inline-block rounded-[5px] border-2 border-orange-500 px-5 py-2 text-sm font-bold text-orange-500"
+          >
+            Não deixe sua pesquisa parar no laboratório.
+          </span>
+
+          
+          <h2 class="mt-6 text-2xl font-bold text-white sm:text-lg">
+            Cadastre-se para a <span class="text-orange-500">4º edição</span> e receba todas as
+            informações sobre o treinamento
+          </h2>
+          <p class="mx-auto mt-4 max-w-2xl text-xs font-normal text-white/80">
+            Participe do <span class="font-bold">Treinamento de Empreendedorismo para Cientistas</span>
+            e descubra como transformar conhecimento em impacto.
+          </p>
+
+          <!-- 3. Aqui vai o SEU componente do formulário: -->
+          <!-- <FormularioCadastro /> -->
+          <div
+          id="formulario" 
+          class=" rounded-lg text-sm text-white/40">
+         <Formulario />
+          </div>
+
+        </div>
+    </div>
+    </section>
+    <section>
+         <div class="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 text-center sm:grid-cols-2">
+        <h3
+          class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent"
+        >
+          Apoio
+        </h3>
+        <h3
+          class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent"
+        >
+          Patrocinadores
+        </h3>
+      </div>
+      <h3
+          class="text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent p-20"
+        >
+          Unidades de Pesquisa Vinculados
+    </h3>
+    </section>
+
 
 </template>
