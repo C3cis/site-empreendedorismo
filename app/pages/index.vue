@@ -225,25 +225,21 @@ import { professores } from '~/data/professores'
 
     </section>
 
-    <!-- ===== SEÇÃO DE CADASTRO ===== -->
     <section id="cadastro" 
     class="relative overflow-hidden bg-white px-8 py-24   ">
 
-      <!-- wrapper do card: 'relative' = o "palco" pro brilho se posicionar -->
+      
       <div class="relative mx-auto max-w-4xl">
 
-        <!-- CAMADA 1: brilho laranja (maior que o card, atrás dele) -->
         <div
         id="CamadaTranslucida"
           class="pointer-events-none absolute left-2/3 -top-2/4 h-[80%] w-[300%] -translate-x-1/2 translate-y-1/4 bg-orange-400 opacity-50 blur-lg "
         ></div>
 
-        <!-- CAMADA 2: o card principal ('z-10' = na frente do brilho) -->
         <div 
         id="imagemFundo"
         class="relative z-10 rounded-3xl bg-[url('/fundoSecoes.png')] bg-center px-6 pt-28 p-8 text-center shadow-2xl sm:p-12">
 
-          <!-- 1. Badge -->
           <span
             class="inline-block rounded-[5px] border-2 border-orange-500 px-5 py-2 text-sm font-bold text-orange-500"
           >
@@ -260,8 +256,7 @@ import { professores } from '~/data/professores'
             e descubra como transformar conhecimento em impacto.
           </p>
 
-          <!-- 3. Aqui vai o SEU componente do formulário: -->
-          <!-- <FormularioCadastro /> -->
+
           <div
           id="formulario" 
           class=" rounded-lg text-sm text-white/40">
@@ -271,25 +266,45 @@ import { professores } from '~/data/professores'
         </div>
     </div>
     </section>
-    <section>
-         <div class="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-8 text-center sm:grid-cols-2">
-        <h3
-          class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent"
-        >
-          Apoio
-        </h3>
-        <h3
-          class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent"
-        >
-          Patrocinadores
-        </h3>
-      </div>
-      <h3
-          class="text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent p-20"
-        >
-          Unidades de Pesquisa Vinculados
-    </h3>
-    </section>
 
+    <section id="apoiadores" class="py-16 px-6">
+
+  <!-- Bloco 1: Apoio + Patrocinadores lado a lado -->
+  <div class="grid grid-cols-2 gap-12 mb-16">
+    
+    <div class="text-center">
+      <h3 class="text-3xl font-bold text-blue-500 mb-8">Apoio</h3>
+      <div class="flex items-center justify-center">
+        <img src="/marcas/apoio/logoCBPF.png" alt="CBPF" class="h-16 object-contain" />
+      </div>
+    </div>
+
+    <div class="text-center">
+      <h3 class="text-3xl font-bold text-blue-500 mb-8">Patrocinadores</h3>
+      <div class="flex items-center justify-center gap-8 flex-wrap">
+        <img src="/marcas/patrocinadores/comunicaco.png" alt="Comunicação e Expressão" class="h-16 object-contain" />
+        <img src="/marcas/patrocinadores/inova.png" alt="Inova UFRJ" class="h-16 object-contain" />
+        <img src="/marcas/patrocinadores/ctit.png" alt="CTIT" class="h-12 object-contain" />
+        <img src="/marcas/patrocinadores/ungria.png" alt="Ungria" class="h-6 object-contain" />
+      </div>
+    </div>
+
+</div>
+
+  <!-- Bloco 2: Unidades de Pesquisa Vinculadas -->
+  <div class="text-center">
+    <h3 class="p-3 text-3xl font-bold text-blue-500 mb-10">Unidades de Pesquisa Vinculadas</h3>
+    <div class="flex items-center justify-center gap-10 flex-wrap">
+        <img src="/marcas/unidades/on.png" alt="Observatorio" class="h-12 object-contain" />
+      <img src="/marcas/unidades/cetem 1.png" alt="CETEM" class="h-14 object-contain" />
+      <img src="/marcas/unidades/ibict 1.png" alt="IBICT" class="h-14 object-contain" />
+      <img src="/marcas/unidades/impa 1.png" alt="IMPA" class="h-14 object-contain" />
+      <img src="/marcas/unidades/INMA 1.png" alt="INMA" class="h-14 object-contain" />
+      <img src="/marcas/unidades/int.png" alt="INT" class="h-14 object-contain" />
+      <img src="/marcas/unidades/lncc 1.png" alt="LNCC" class="h-14 object-contain" />
+      <img src="/marcas/unidades/mcti.png" alt="MCTI" class="h-14 object-contain" />
+    </div>
+  </div>
+</section>
 
 </template>

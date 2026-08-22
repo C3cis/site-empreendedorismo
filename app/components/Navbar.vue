@@ -6,7 +6,7 @@ const navLinks = [
   { name: 'Metodologia', to: '/#metodologia' },
   { name: 'Resultado', to: '/#resultado' },
   { name: 'Professores', to: '/#professores' },
-  { name: 'Edições anteriores', to: '/#anteriores' },
+  { name: 'Edições anteriores', to: '/#depoimentos' },
 ]
 </script>
 

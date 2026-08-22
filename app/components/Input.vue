@@ -1,28 +1,24 @@
 <script setup lang="ts">
-// Props que o formulário passa pra cada campo (estilo runtime, igual ao da equipe)
 defineProps({
-  id: { type: String, required: true }, // liga a <label> ao <input>
-  type: { type: String, default: 'text' }, // text | email | tel...
-  label: { type: String, default: '' }, // texto que aparece em cima
-  placeholder: { type: String, default: '' }, // texto "fantasma" dentro do campo
+  id: { type: String, required: true }, 
+  type: { type: String, default: 'text' }, 
+  label: { type: String, default: '' }, 
+  placeholder: { type: String, default: '' }, 
   autocomplete: { type: String, default: '' },
-  required: { type: Boolean, default: true }, // mostra o "*" e valida
+  required: { type: Boolean, default: true }, 
 })
 
-// defineModel() = faz este componente aceitar v-model.
-// "model" é uma variável reativa ligada ao v-model do pai (mão dupla).
 const model = defineModel<string>()
 </script>
 
 <template>
   <div>
-    <!-- Label ligada ao input pelo id (clicar nela foca o campo = acessibilidade) -->
+    
     <label :for="id" class="mb-1 block text-sm font-medium text-white">
       {{ label }}
       <span v-if="required" class="text-red-500">*</span>
     </label>
 
-    <!-- O input de verdade. v-model="model" conecta o que é digitado ao defineModel. -->
     <input
       :id="id"
       v-model="model"
